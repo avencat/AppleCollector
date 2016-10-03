@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D01820B71DA24AB40066C9C3 /* macos_sierra_large_2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D01820B61DA24AB40066C9C3 /* macos_sierra_large_2x.jpg */; };
 		D01820B91DA24B460066C9C3 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01820B81DA24B460066C9C3 /* AddItemsViewController.swift */; };
-		D01820BD1DA24D5A0066C9C3 /* UpdateCollectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01820BC1DA24D5A0066C9C3 /* UpdateCollectorViewController.swift */; };
 		D037D9CF1DA173D500C84C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D9CE1DA173D500C84C73 /* AppDelegate.swift */; };
 		D037D9D11DA173D500C84C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D9D01DA173D500C84C73 /* ViewController.swift */; };
 		D037D9D41DA173D500C84C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D037D9D21DA173D500C84C73 /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		D01820B61DA24AB40066C9C3 /* macos_sierra_large_2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = macos_sierra_large_2x.jpg; sourceTree = "<group>"; };
 		D01820B81DA24B460066C9C3 /* AddItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
-		D01820BC1DA24D5A0066C9C3 /* UpdateCollectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCollectorViewController.swift; path = ../UpdateCollectorViewController.swift; sourceTree = "<group>"; };
 		D037D9CB1DA173D500C84C73 /* AppleCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D037D9CE1DA173D500C84C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D037D9D01DA173D500C84C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				D037D9CE1DA173D500C84C73 /* AppDelegate.swift */,
 				D037D9D01DA173D500C84C73 /* ViewController.swift */,
 				D01820B81DA24B460066C9C3 /* AddItemsViewController.swift */,
-				D01820BC1DA24D5A0066C9C3 /* UpdateCollectorViewController.swift */,
 				D037D9D21DA173D500C84C73 /* Main.storyboard */,
 				D037D9D81DA173D500C84C73 /* Assets.xcassets */,
 				D037D9DA1DA173D500C84C73 /* LaunchScreen.storyboard */,
@@ -150,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01820BD1DA24D5A0066C9C3 /* UpdateCollectorViewController.swift in Sources */,
 				D037D9D11DA173D500C84C73 /* ViewController.swift in Sources */,
 				D01820B91DA24B460066C9C3 /* AddItemsViewController.swift in Sources */,
 				D037D9D71DA173D500C84C73 /* AppleCollector.xcdatamodeld in Sources */,

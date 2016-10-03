@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Apple Collector-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="AppleCollector" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,16 +31,16 @@
                             <constraint firstItem="Juk-ta-F7d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u8E-V2-v8D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="boa-e2-AEV">
+                    <navigationItem key="navigationItem" title="Apple Collector" id="boa-e2-AEV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="KX2-y3-yKE"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yuu-7j-bVb">
                             <connections>
-                                <segue destination="F2F-3o-D54" kind="show" id="HdW-II-GC4"/>
+                                <segue destination="F2F-3o-D54" kind="show" identifier="collectorViewSegue" id="HdW-II-GC4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Juk-ta-F7d" id="olQ-De-MHu"/>
-                        <segue destination="18z-cS-7We" kind="show" id="0RH-jL-WZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,9 +76,19 @@
                                     <action selector="addTapped:" destination="F2F-3o-D54" eventType="touchUpInside" id="nv2-ab-l00"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aur-9u-RxS">
+                                <state key="normal" title="Delete 🗑">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTapped:" destination="F2F-3o-D54" eventType="touchUpInside" id="7sx-nk-XnZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aur-9u-RxS" firstAttribute="top" secondItem="LLq-Mx-8oq" secondAttribute="bottom" constant="20" id="9Cz-X1-3Zi"/>
+                            <constraint firstItem="aur-9u-RxS" firstAttribute="centerX" secondItem="JBx-e1-4Wn" secondAttribute="centerX" id="DJM-5i-mRz"/>
                             <constraint firstItem="DU4-vr-Dw3" firstAttribute="centerX" secondItem="JBx-e1-4Wn" secondAttribute="centerX" id="H1B-XY-asq"/>
                             <constraint firstItem="DU4-vr-Dw3" firstAttribute="top" secondItem="yv2-m5-w4x" secondAttribute="bottom" constant="30" id="LKE-I8-g32"/>
                             <constraint firstItem="LLq-Mx-8oq" firstAttribute="centerX" secondItem="JBx-e1-4Wn" secondAttribute="centerX" id="bRF-1g-avz"/>
@@ -103,13 +113,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="LLq-Mx-8oq" id="btu-m4-YZ2"/>
                         <outlet property="collectorImageView" destination="yv2-m5-w4x" id="E6k-m6-T51"/>
+                        <outlet property="deleteButton" destination="aur-9u-RxS" id="P3t-wr-V4r"/>
                         <outlet property="imageTitle" destination="DU4-vr-Dw3" id="O8S-6h-gab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZg-fD-4xX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="-544.67766116941539"/>
+            <point key="canvasLocation" x="1671" y="-545"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5K0-WJ-ufF">
@@ -128,80 +140,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhV-Kq-hT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="-543.77811094452773"/>
-        </scene>
-        <!--Update Collector View Controller-->
-        <scene sceneID="hOq-no-GZs">
-            <objects>
-                <viewController id="18z-cS-7We" customClass="UpdateCollectorViewController" customModule="AppleCollector" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1kH-T9-8vR"/>
-                        <viewControllerLayoutGuide type="bottom" id="s1g-jQ-soo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1lP-GR-6bJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UYa-bz-X1C">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="KeW-cV-qst"/>
-                                    <constraint firstAttribute="width" constant="280" id="oYo-iS-hPO"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hcf-hD-NAv">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-8p-a5p">
-                                <state key="normal" title="Update"/>
-                                <connections>
-                                    <action selector="updateTapped:" destination="18z-cS-7We" eventType="touchUpInside" id="ccA-R7-WYQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5d-in-we2">
-                                <frame key="frameInset" minX="153" minY="361" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete 🗑">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteTapped:" destination="18z-cS-7We" eventType="touchUpInside" id="P6m-Qj-TYZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UYa-bz-X1C" firstAttribute="centerX" secondItem="1lP-GR-6bJ" secondAttribute="centerX" id="92U-5Q-sOl"/>
-                            <constraint firstItem="Hcf-hD-NAv" firstAttribute="top" secondItem="UYa-bz-X1C" secondAttribute="bottom" constant="30" id="IUm-YB-yvw"/>
-                            <constraint firstItem="Hcf-hD-NAv" firstAttribute="width" secondItem="UYa-bz-X1C" secondAttribute="width" id="bJC-5g-7W1"/>
-                            <constraint firstItem="8LX-8p-a5p" firstAttribute="centerX" secondItem="1lP-GR-6bJ" secondAttribute="centerX" id="bq1-ty-62r"/>
-                            <constraint firstItem="UYa-bz-X1C" firstAttribute="top" secondItem="1kH-T9-8vR" secondAttribute="bottom" constant="20" id="iq4-rr-G4d"/>
-                            <constraint firstItem="8LX-8p-a5p" firstAttribute="top" secondItem="Hcf-hD-NAv" secondAttribute="bottom" constant="20" id="lrT-oz-dZc"/>
-                            <constraint firstItem="Hcf-hD-NAv" firstAttribute="centerX" secondItem="1lP-GR-6bJ" secondAttribute="centerX" id="mDm-RX-NXf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="PzF-dY-4gv">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="FtT-44-O7B">
-                                <connections>
-                                    <action selector="cameraTapped:" destination="18z-cS-7We" id="bSu-bN-J9G"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Photos" id="TWf-Vc-qD0">
-                                <connections>
-                                    <action selector="photosTapped:" destination="18z-cS-7We" id="KGq-Er-dgp"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="collectorImageView" destination="UYa-bz-X1C" id="9DG-je-ofr"/>
-                        <outlet property="titleCollectorTextField" destination="Hcf-hD-NAv" id="ZJr-e4-Mky"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S2E-Mo-aZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="900" y="151"/>
         </scene>
     </scenes>
     <resources>
